@@ -26,7 +26,9 @@ export default async function TableUsers() {
           >
             <span className="text-white text-sm">{user.id}</span>
             <span className="text-white">{user.username}</span>
-            <span className="text-white truncate">{user.password}</span>
+            <span className="text-white">
+              {"*".repeat(Math.min(user.password.length, 12))}
+            </span>
             <div className="flex items-center gap-4">
               <form action={deleteUser}>
                 <input type="hidden" name="id" value={user.id} />

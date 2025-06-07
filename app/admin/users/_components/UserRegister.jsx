@@ -89,11 +89,20 @@ export default function UserRegister() {
 
               <div className="flex justify-end gap-2 mt-4">
                 <DialogClose asChild>
-                  <Button type="button" variant="outline">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="bg-gray-300 hover:bg-red-500"
+                  >
                     Anulează
                   </Button>
                 </DialogClose>
-                <Button type="submit">Creează</Button>
+                <Button
+                  type="submit"
+                  className="bg-gray-300 hover:bg-green-500 border"
+                >
+                  Creează
+                </Button>
               </div>
             </form>
           </DialogContent>
