@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import LogOutButton from "./LogOutButton";
+import Link from "next/link";
 
 export default function SideBar() {
   return (
@@ -13,15 +15,14 @@ export default function SideBar() {
       />
 
       <div className="border-t border-amber-500 mt-4 pt-2">
-        {["Dashboard", "Settings", "Profile", "Logout"].map((label) => (
-          <button
-            key={label}
-            className="w-full text-left px-4 py-2 text-white hover:bg-gray-800 rounded-lg"
-          >
-            {label}
-          </button>
-        ))}
+        <button className="w-full text-left px-4 py-2 text-white hover:bg-gray-800 rounded-lg">
+          <Link href="/admin">Dashboard</Link>
+        </button>
+        <button className="w-full text-left px-4 py-2 text-white hover:bg-gray-800 rounded-lg">
+          <Link href="/admin/users">Users</Link>
+        </button>
       </div>
+      <LogOutButton />
     </div>
   );
 }
