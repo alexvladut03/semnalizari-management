@@ -1,6 +1,7 @@
 import { MdDeleteForever, MdEdit, MdModeEdit } from "react-icons/md";
 import prisma from "@/lib/prisma";
 import { deleteUser } from "../actions/deleteUser"; // asigură-te că calea e corectă
+import EditUserForm from "./EditUserForm";
 
 export default async function TableUsers() {
   const users = await prisma.user.findMany();
@@ -36,7 +37,7 @@ export default async function TableUsers() {
                   <MdDeleteForever className="text-2xl text-red-500 hover:text-red-700 cursor-pointer" />
                 </button>
               </form>
-              <MdEdit className="text-2xl text-blue-500 hover:text-blue-700 cursor-pointer" />
+              <EditUserForm user={user} />
             </div>
           </div>
         );
