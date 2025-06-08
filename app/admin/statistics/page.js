@@ -11,7 +11,7 @@ import { updateAllWorkLogs } from "./actions/updateAllWorkLogs";
 export default async function page() {
   const chartData = await getWorkLogsForChart();
   const allLogs = await getAllWorkLogs();
-  console.log("All Work Logsss:", updateAllWorkLogs);
+
   return (
     <div className="ml-[25%] h-screen overflow-y-auto bg-linear from-slate-800 to-slate-900 text-white p-4">
       <SideBar />

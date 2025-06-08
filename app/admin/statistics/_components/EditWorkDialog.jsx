@@ -57,7 +57,9 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
 
                   <div className="grid grid-cols-4 gap-2 items-end">
                     <div>
-                      <Label htmlFor={`hours-${log.id}`}>Ore</Label>
+                      <Label htmlFor={`hours-${log.id}`} className="mb-2">
+                        Ore
+                      </Label>
                       <Input
                         id={`hours-${log.id}`}
                         name={`hours-${log.id}`}
@@ -68,7 +70,9 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
                       />
                     </div>
                     <div>
-                      <Label htmlFor={`minutes-${log.id}`}>Minute</Label>
+                      <Label htmlFor={`minutes-${log.id}`} className="mb-2">
+                        Minute
+                      </Label>
                       <Input
                         id={`minutes-${log.id}`}
                         name={`minutes-${log.id}`}
@@ -80,7 +84,9 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
                       />
                     </div>
                     <div>
-                      <Label htmlFor={`reason-${log.id}`}>Motiv</Label>
+                      <Label htmlFor={`reason-${log.id}`} className="mb-2">
+                        Motiv
+                      </Label>
                       <Input
                         id={`reason-${log.id}`}
                         name={`reason-${log.id}`}
@@ -89,6 +95,12 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
                         required
                       />
                     </div>
+                    <Button
+                      type="submit"
+                      className="bg-red-300 hover:bg-red-500 border"
+                    >
+                      Sterge
+                    </Button>
                   </div>
                 </div>
               );
