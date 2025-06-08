@@ -15,12 +15,12 @@ import { Button } from "@/components/ui/button";
 export default function EditWorkDialog({ trigger, actions, workLog, user }) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [error, setError] = useState("");
+  const [localLogs, setLocalLogs] = useState(workLog); // înlocuiește workLog
+
   const handleSubmit = async (formData) => {
     setError("");
     try {
       await actions.update(formData);
-      // opțional: poți refolosi refetch dacă vrei
-      // const refreshedLogs = await actions.refetch();
       setDialogOpen(false);
     } catch (err) {
       setError(err.message || "Eroare la salvare");
@@ -96,10 +96,21 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
                       />
                     </div>
                     <Button
-                      type="submit"
+                      type="button"
+                      onClick={async () => {
+                        setError("");
+                        try {
+                          await actions.delete(log.id);
+                          setLocalLogs((prev) =>
+                            prev.filter((l) => l.id !== log.id)
+                          ); // elimină vizual
+                        } catch (err) {
+                          setError(err.message || "Eroare la ștergere");
+                        }
+                      }}
                       className="bg-red-300 hover:bg-red-500 border"
                     >
-                      Sterge
+                      Șterge
                     </Button>
                   </div>
                 </div>

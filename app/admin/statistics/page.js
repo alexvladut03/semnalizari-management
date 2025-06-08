@@ -7,6 +7,7 @@ import { getWorkLogsForChart } from "./actions/getWorkLogsForChart";
 import EditWorkDialog from "./_components/EditWorkDialog";
 import { getAllWorkLogs } from "./actions/getAllWorkLogs";
 import { updateAllWorkLogs } from "./actions/updateAllWorkLogs";
+import { deleteWorkLog } from "./actions/deleteWorkLog";
 
 export default async function page() {
   const chartData = await getWorkLogsForChart();
@@ -37,6 +38,7 @@ export default async function page() {
           actions={{
             update: updateAllWorkLogs,
             refetch: getAllWorkLogs,
+            delete: deleteWorkLog,
           }}
           user={allLogs[0]?.user?.username ?? ""}
         />
