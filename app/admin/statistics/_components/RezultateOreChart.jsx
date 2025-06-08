@@ -19,7 +19,6 @@ const chartConfig = {
 };
 
 export default function RezultateOreChart({ data }) {
-  console.log("RezultateOreChart data:", data);
   return (
     <div className="w-1/2 mx-auto mt-10">
       <ChartContainer config={chartConfig} className="min-h-[150px] w-full">
