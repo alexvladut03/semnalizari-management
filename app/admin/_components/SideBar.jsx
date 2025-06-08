@@ -19,6 +19,9 @@ export default function SideBar() {
           <Link href="/admin">Dashboard</Link>
         </button>
         <button className="w-full text-left px-4 py-2 text-white hover:bg-gray-800 rounded-lg">
+          <Link href="/admin/statistics">Statistici</Link>
+        </button>
+        <button className="w-full text-left px-4 py-2 text-white hover:bg-gray-800 rounded-lg">
           <Link href="/admin/users">Users</Link>
         </button>
       </div>
