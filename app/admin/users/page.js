@@ -18,7 +18,7 @@ export default function page() {
           action={saveUser}
           trigger={
             <button className="my-4 bg-gray-500/70 hover:bg-gray-400/90 text-white py-2 px-4 rounded">
-              Adaugă produs
+              Adaugă Un Utilizator
             </button>
           }
         />

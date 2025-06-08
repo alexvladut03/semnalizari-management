@@ -72,11 +72,20 @@ export default function UserDialogForm({ mode, user, action, trigger }) {
 
           <div className="flex justify-end gap-2 mt-4">
             <DialogClose asChild>
-              <Button type="button" variant="outline">
+              <Button
+                type="button"
+                variant="outline"
+                className="bg-red-300 hover:bg-red-500 border"
+              >
                 Anulează
               </Button>
             </DialogClose>
-            <Button type="submit">{isEdit ? "Salvează" : "Creează"}</Button>
+            <Button
+              type="submit"
+              className="bg-green-300 hover:bg-green-500 border"
+            >
+              {isEdit ? "Salvează" : "Creează"}
+            </Button>
           </div>
         </form>
       </DialogContent>
