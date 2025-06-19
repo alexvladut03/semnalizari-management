@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export default function EditWorkDialog({ trigger, actions, workLog, user }) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [error, setError] = useState("");
-  const [localLogs, setLocalLogs] = useState(workLog); // înlocuiește workLog
+  const [localLogs, setLocalLogs] = useState(workLog);
 
   const handleSubmit = async (formData) => {
     setError("");
@@ -55,7 +55,7 @@ export default function EditWorkDialog({ trigger, actions, workLog, user }) {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-4 gap-2 items-end">
+                  <div className="grid grid-cols-3 gap-2 items-end">
                     <div>
                       <Label htmlFor={`hours-${log.id}`} className="mb-2">
                         Ore
